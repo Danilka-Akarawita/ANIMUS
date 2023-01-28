@@ -1,0 +1,19 @@
+#loginbtn{
+    box-sizing: border-box;
+    position: relative;
+    width: 100px;
+    height: 30px;
+
+
+ color: wheat;
+/* backColor */
+
+background: linear-gradient(116.02deg, rgba(32, 56, 39, 0.828) 10.89%, rgba(18, 39, 48, 0.9) 91.82%);
+/* strike */
+
+border: 1px solid #C9B1B1;
+/* newShadow */
+
+box-shadow: 10px 11px 11px 1px rgba(0, 0, 0, 0.5);
+border-radius: 40px;
+}
