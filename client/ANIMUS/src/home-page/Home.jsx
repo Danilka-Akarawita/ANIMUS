@@ -1,9 +1,13 @@
 import React from "react";
+import Loginbtn from "../components/Loginbtn";
+
 
 const Home = (props) => {
   return (
     <div>
-      <h1>Home</h1>
+      
+      <Loginbtn name="Login"/>
+
     </div>
   );
 };
