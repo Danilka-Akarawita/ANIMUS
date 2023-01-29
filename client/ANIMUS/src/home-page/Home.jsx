@@ -1,15 +1,21 @@
-import React from "react";
-import Loginbtn from "../components/Loginbtn";
 
+import React from 'react'
+import Container from '../components/Container'
 
-const Home = (props) => {
+export default function Home() {
   return (
     <div>
-      
-      <Loginbtn name="Login"/>
-
+      <div>
+     <h1> ANIMUS</h1>
+    <p1> "Be the hero of your own game and planet"</p1>
     </div>
-  );
-};
+    
+      <div> <Container /> </div>
+      
+      
+    </div>
 
-export default Home;
+  )
+}
+
+
