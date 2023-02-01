@@ -8,6 +8,7 @@ function App(props) {
     <div>
       <Login />
       <GameAsset />
+      <h1 className="text-sky-400">Welcome</h1>
     </div>
   );
 }
