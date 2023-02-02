@@ -1,13 +1,18 @@
 import React from "react";
-import Home from "./home-page/Home";
-import Login from "./login-page/Login";
-import GameAsset from "./components/GameAsset";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
+import NavBar from "./components/NavBar";
 
 function App(props) {
   return (
-    <div>
-      <Login />
-      <GameAsset />
+    <div className="">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="login" element={<Login />} />
+        <Route path="login" element={<SignUp />} />
+      </Routes>
     </div>
   );
 }
