@@ -1,68 +1,17 @@
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  color: aliceblue;
-  background-image: url("./images/homeBg.jpeg");
-  backdrop-filter: brightness(60%);
- 
-  height: 700px;
-  background-size: cover;
-  background-position:center;
-  background-repeat: no-repeat;
-
-
-
+  background: linear-gradient(
+    116.9deg,
+    rgba(24, 83, 40, 0.9) 10.92%,
+    rgba(9, 50, 35, 0.9) 50.4%,
+    rgba(14, 41, 28, 0.9) 95.04%
+  );
+  background-attachment: fixed;
 }
-
-.homebox{
-  background-color: darkslategrey;
-  margin: 50px;
-  width: 500px;
-  height: 400px;
-  padding: 10px;
-  border-radius: 7%;
-  opacity: 90%;
- 
-
-  border: 5px solid gray;
+nav a.active {
+  text-decoration: none;
+  color: rgb(3, 41, 11);
 }
-button{
-  color:white;
-  display: inline-block;
-  padding: 10px;
-  margin: 8px;
-  text-align: center;
-  width: 100px;
-  height: 120px;
-  border-radius: 13px;
-}
-
-#getpoints{
- background-image: url("./images/points.jpeg");
- background-size: cover;
- backdrop-filter: brightness(90%);
- 
-}
-
-#socialMedia{
-  background-image: url("./images/social.jpeg");
-  background-size: cover;
-  
-}
-#gameAccount{
-  background-image: url("./images/account.jpeg");
-  background-size: cover;
-  
-}
-#gameAsset{
-  margin-top: -5px;
-  background-image: url("./images/asset.jpeg");
-  background-size: cover;
-  
-}
-.buttons{
-  display: flex;
-  justify-content:space-around ;
-}
-
-
