@@ -10,7 +10,8 @@ export default function Home() {
       <div>
         <NavBar />
         <img src={Logo} alt="logo" />
-        <div>
+        <div className="">
+          <button>Login</button>
           <button>Login</button>
         </div>
         <h1> ANIMUS</h1>
