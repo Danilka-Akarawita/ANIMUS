@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
 import NavBar from "./components/NavBar";
 
 function App(props) {
@@ -10,6 +11,7 @@ function App(props) {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
+        <Route path="login" element={<SignUp />} />
       </Routes>
     </div>
   );

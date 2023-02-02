@@ -34,7 +34,7 @@ input {
 button {
   box-sizing: border-box;
 
-  width: 50%;
+  width: 7rem;
   height: 3rem;
 
   /* backColor */
