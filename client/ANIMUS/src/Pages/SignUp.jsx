@@ -1,20 +1,57 @@
 import React from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import LoginButton from "../components/Button";
 import InputField from "../components/InputField";
+import Title from "../assets/ANIMUS.svg";
 import "./Login.css";
 import NavBar from "../components/NavBar";
 
-export default function Login() {
+export default function SignUp() {
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  const handleSignUp = () => {};
   return (
     <>
       <NavBar />
 
-      <div className="loginBox">
-        <h1> ANIMUS</h1>
-        <InputField name={"UserName"} placeholder="UserName/Email Address" />
-        <InputField name={"Password"} placeholder="" />
-        <LoginButton />
+      <div className="form">
+        <img src={Title} alt="title" />
+
+        <input
+          type="text"
+          placeholder="username"
+          className="p-2 my-4"
+          name="username"
+          value={formData.username}
+          onChange={handleFormChange}
+        />
+
+        <input
+          type="text"
+          placeholder="email"
+          className="p-2 my-4"
+          name="email"
+          value={formData.email}
+          onChange={handleFormChange}
+        />
+        <input
+          type="text"
+          placeholder="password"
+          className="p-2 my-4"
+          name="password"
+          value={formData.password}
+          onChange={handleFormChange}
+        />
+        <button onClick={handleSignUp}>Sign Up</button>
       </div>
     </>
   );
