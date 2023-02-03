@@ -1,33 +1,46 @@
 import React from "react";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import LoginButton from "../components/Button";
-import InputField from "../components/InputField";
-import "./Login.css";
+import { signInUser } from "../../firebase/autenticate";
 import Title from "../assets/ANIMUS.svg";
+import "./Login.css";
 import NavBar from "../components/NavBar";
 
-export default function Login() {
+export default function SignUp() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  const handleSignIn = () => {
+    signInUser(formData.email, formData.password);
+  };
   return (
     <>
       <NavBar />
 
-      <div className="flex flex-col justify-center align-middles bg-grey">
-        <h1 className="text-center "> ANIMUS</h1>
-
+      <div className="form">
         <img src={Title} alt="title" />
-        <input type="text" id="Username" name="email" placeholder="username" />
+
         <input
           type="text"
-          id="Username"
-          name="password"
-          placeholder="password"
+          placeholder="email"
+          className="p-2 my-4"
+          name="email"
+          value={formData.email}
+          onChange={handleFormChange}
         />
-        <LoginButton />
+        <input
+          type="text"
+          placeholder="password"
+          className="p-2 my-4"
+          name="password"
+          value={formData.password}
+          onChange={handleFormChange}
+        />
+        <button onClick={handleSignIn}>Login</button>
       </div>
     </>
   );
