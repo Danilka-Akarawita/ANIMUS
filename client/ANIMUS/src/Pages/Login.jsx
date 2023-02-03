@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import LoginButton from "../components/Button";
 import InputField from "../components/InputField";
@@ -7,6 +8,10 @@ import Title from "../assets/ANIMUS.svg";
 import NavBar from "../components/NavBar";
 
 export default function Login() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
   return (
     <>
       <NavBar />
@@ -15,8 +20,13 @@ export default function Login() {
         <h1 className="text-center "> ANIMUS</h1>
 
         <img src={Title} alt="title" />
-        <InputField name={"UserName"} placeholder="UserName/Email Address" />
-        <InputField name={"Password"} placeholder="" />
+        <input type="text" id="Username" name="email" placeholder="username" />
+        <input
+          type="text"
+          id="Username"
+          name="password"
+          placeholder="password"
+        />
         <LoginButton />
       </div>
     </>
