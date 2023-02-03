@@ -1,8 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import LoginButton from "../components/Button";
-import InputField from "../components/InputField";
+import { signUpUser } from "../../firebase/autenticate";
 import Title from "../assets/ANIMUS.svg";
 import "./Login.css";
 import NavBar from "../components/NavBar";
@@ -18,7 +16,9 @@ export default function SignUp() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  const handleSignUp = () => {};
+  const handleSignUp = () => {
+    signUpUser(formData.email, formData.password);
+  };
   return (
     <>
       <NavBar />
