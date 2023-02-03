@@ -1,24 +1,23 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 const auth = getAuth();
-createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed in 
-    const user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
 
-
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+export const signUpUser = async (email, password) => {
+  try {
+    const user = await createUserWithEmailAndPassword(auth, email, password);
+    console.log(user);
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 
 signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in 
+    // Signed in
     const user = userCredential.user;
     // ...
   })
@@ -27,11 +26,12 @@ signInWithEmailAndPassword(auth, email, password)
     const errorMessage = error.message;
   });
 
-  
 import { getAuth, signOut } from "firebase/auth";
 
-signOut(auth).then(() => {
-  // Sign-out successful.
-}).catch((error) => {
-  // An error happened.
-});
+signOut(auth)
+  .then(() => {
+    // Sign-out successful.
+  })
+  .catch((error) => {
+    // An error happened.
+  });
