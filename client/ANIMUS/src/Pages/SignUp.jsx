@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { signUpUser } from "../../firebase/autenticate";
+import { googleSignIn } from "../../firebase/autenticate";
 import Title from "../assets/ANIMUS.svg";
 import "./Login.css";
 import NavBar from "../components/NavBar";
@@ -18,6 +19,10 @@ export default function SignUp() {
   };
   const handleSignUp = () => {
     signUpUser(formData.email, formData.password);
+  };
+
+  const handleGoogleSignIn=()=>{
+    googleSignIn();
   };
   return (
     <>
@@ -52,6 +57,7 @@ export default function SignUp() {
           onChange={handleFormChange}
         />
         <button onClick={handleSignUp}>Sign Up</button>
+        <GoogleButton onClick={handleGoogleSignIn}/>
       </div>
     </>
   );

@@ -3,6 +3,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signInWithPopup, GoogleAuthProvider
 } from "firebase/auth";
 
 const auth = getAuth(app);
@@ -40,3 +41,14 @@ export const signInUser = async (email, password) => {
         // An error happened.
       });
     }
+
+
+  export const googleSignIn = async () => {
+ try{
+    const user= await signInWithPopup(auth, provider)
+  
+    }catch(error){
+        console.log(error.message)
+        
+    };
+  }
