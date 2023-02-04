@@ -1,4 +1,6 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+
 import { useState } from "react";
 import { signInUser } from "../../firebase/autenticate";
 import Title from "../assets/ANIMUS.svg";
@@ -18,11 +20,11 @@ export default function SignUp() {
     signInUser(formData.email, formData.password);
   };
   return (
-    <>
-      <NavBar />
-
-      <div className="form">
-        <img src={Title} alt="title" />
+    <div className="p-8 flex flex-col justify-around">
+      <div className="form mt-4">
+        <NavLink to="/">
+          <img src={Title} alt="title" />
+        </NavLink>
 
         <input
           type="text"
@@ -42,6 +44,6 @@ export default function SignUp() {
         />
         <button onClick={handleSignIn}>Login</button>
       </div>
-    </>
+    </div>
   );
 }

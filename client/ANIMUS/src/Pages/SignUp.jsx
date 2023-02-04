@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { signUpUser } from "../../firebase/autenticate";
-import { googleSignIn } from "../../firebase/autenticate";
+import { NavLink } from "react-router-dom";
+import { signUpUser, googleSignIn } from "../../firebase/autenticate";
 import Title from "../assets/ANIMUS.svg";
 import "./Login.css";
 import NavBar from "../components/NavBar";
@@ -21,15 +21,15 @@ export default function SignUp() {
     signUpUser(formData.email, formData.password);
   };
 
-  const handleGoogleSignIn=()=>{
+  const handleGoogleSignIn = () => {
     googleSignIn();
   };
   return (
-    <>
-      <NavBar />
-
-      <div className="form">
-        <img src={Title} alt="title" />
+    <div className="p-8 flex flex-col justify-around">
+      <div className="form p-4">
+        <NavLink to="/">
+          <img src={Title} alt="title" />
+        </NavLink>
 
         <input
           type="text"
@@ -56,9 +56,15 @@ export default function SignUp() {
           value={formData.password}
           onChange={handleFormChange}
         />
-        <button onClick={handleSignUp}>Sign Up</button>
-        <GoogleButton onClick={handleGoogleSignIn}/>
+        <div className="flex flex-col justify-between items-center ">
+          <button className="m-4" onClick={handleSignUp}>
+            Sign Up
+          </button>
+          <button className="font-bold text-white" onClick={handleGoogleSignIn}>
+            G
+          </button>
+        </div>
       </div>
-    </>
+    </div>
   );
 }
