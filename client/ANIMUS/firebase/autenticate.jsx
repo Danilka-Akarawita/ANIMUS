@@ -3,7 +3,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signInWithPopup, GoogleAuthProvider
+  signInWithPopup, GoogleAuthProvider, signOut
 } from "firebase/auth";
 
 const auth = getAuth(app);
@@ -30,14 +30,12 @@ export const signInUser = async (email, password) => {
 
 
   export const signOutUser = async (email, password) => {
-  signOut(auth)
-    .then(() => {
-      // Sign-out successful.
-    })
-    .catch((error) => {
-      // An error happened.
-    });
+  try{
+    await signOut(auth)
+  }catch(error){
+    console.log(error.message)
   }
+}
 
 export const googleSignIn = async () => {
   try{
