@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Login.css";
-import Loginbtn from '../components/Loginbtn';
+import Loginbtn from '../../../client/ANIMUS/src/components/Loginbtn';
 export default function CountInput() {
   return (
     <>

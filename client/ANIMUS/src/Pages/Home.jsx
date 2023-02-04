@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Logo from "../assets/main-logo.svg";
 import LoginButton from "../components/Button";
-import CountInput from "./CountInput";
+import CountInput from "../../../../cashier/src/Pages/CountInput";
 
 export default function Home() {
   return (
