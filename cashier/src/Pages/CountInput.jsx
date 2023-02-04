@@ -1,15 +1,15 @@
 import React from 'react'
-import "./Login.css";
-import Loginbtn from '../../../client/ANIMUS/src/components/Loginbtn';
+import "./Casher.css"
+// import Loginbtn from '../../../client/ANIMUS/src/components/Loginbtn';
 export default function CountInput() {
   return (
     <>
-    <Loginbtn name="Log out"/>
+    <button>Logout</button>
     <div className="form " >
         <input
           type="text"
           placeholder="Enter contact number"
-          className="p-4 my-4"
+          className="p-2 my-2"
           name="contactNumber"
           
         />
@@ -17,11 +17,12 @@ export default function CountInput() {
         <input
           type="text"
           placeholder="Enter Bag count"
-          className="p-4 my-4"
+          className="p-3 my-2"
           name="bagCount"
          
         />
     </div>
+    <button className="flex  justify-end">Proceed</button>
     </>
     
   )
