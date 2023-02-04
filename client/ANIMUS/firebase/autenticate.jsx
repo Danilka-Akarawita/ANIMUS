@@ -17,7 +17,6 @@ export const signUpUser = async (email, password) => {
   }
 };
 
-
 export const signInUser = async (email, password) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -41,14 +40,3 @@ export const signInUser = async (email, password) => {
         // An error happened.
       });
     }
-
-
-  export const googleSignIn = async () => {
- try{
-    const user= await signInWithPopup(auth, provider)
-  
-    }catch(error){
-        console.log(error.message)
-        
-    };
-  }
