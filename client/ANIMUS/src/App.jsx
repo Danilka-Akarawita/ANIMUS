@@ -5,7 +5,6 @@ import Login from "./Pages/Login";
 import SignUp from "./Pages/SignUp";
 import AboutUs from "./Pages/AboutUs";
 import Points from "./Pages/Point";
-import NavBar from "./components/NavBar";
 function App(props) {
   return (
     <div className="">
