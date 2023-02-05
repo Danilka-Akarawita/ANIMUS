@@ -1,0 +1,23 @@
+{
+  "name": "animus",
+  "version": "1.0.0",
+  "description": "To store user data and user contribution for sustainability ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Danilka-Akarawita/ANIMUS.git"
+  },
+  "author": "Danilka Akarawita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Danilka-Akarawita/ANIMUS/issues"
+  },
+  "homepage": "https://github.com/Danilka-Akarawita/ANIMUS#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^5.0.0"
+  }
+}
