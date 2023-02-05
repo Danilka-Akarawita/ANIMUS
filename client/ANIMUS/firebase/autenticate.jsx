@@ -22,8 +22,12 @@ export const signUpUser = async (email, password) => {
 
 export const signInUser = async (email, password) => {
   try {
-    const user = await signInWithEmailAndPassword(auth, email, password);
-    console.log(user);
+    const userCredentials = await signInWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    console.log(userCredentials.user.uid);
   } catch (error) {
     console.log(error.message);
   }
@@ -38,11 +42,9 @@ export const signOutUser = async (email, password) => {
 };
 
 export const googleSignIn = async () => {
-  try{
-     const user= await signInWithPopup(auth, provider)
-   
-     }catch(error){
-         console.log(error.message)
-         
-     };
+  try {
+    const user = await signInWithPopup(auth, provider);
+  } catch (error) {
+    console.log(error.message);
   }
+};
