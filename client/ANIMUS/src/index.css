@@ -11,7 +11,3 @@ body {
   );
   background-attachment: fixed;
 }
-nav a.active {
-  text-decoration: none;
-  color: rgb(3, 41, 11);
-}

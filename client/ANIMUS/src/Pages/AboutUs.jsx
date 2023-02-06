@@ -5,6 +5,26 @@ export default function AboutUs() {
   return (
     <div>
       <h1>About Us</h1>
+      <div className="flex flex-row justify-around">
+        <div>
+          <h1>Suraj</h1>
+          <h1>Suraj</h1>
+          <h1>Suraj</h1>
+          <h1>Suraj</h1>
+        </div>
+        <div>
+          <h1>Suraj</h1>
+          <h1>Suraj</h1>
+          <h1>Suraj</h1>
+          <h1>Suraj</h1>
+        </div>
+        <div>
+          <h1>Suraj</h1>
+          <h1>Suraj</h1>
+          <h1>Suraj</h1>
+          <h1>Suraj</h1>
+        </div>
+      </div>
       <br />
       <ol>
         <li>
