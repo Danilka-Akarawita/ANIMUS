@@ -7,7 +7,7 @@ export default function Home() {
     <div className="p-8 flex flex-col justify-around">
       <div>
         <img className="my-4" src={Logo} alt="logo" />
-        <div className="flex justify-around flex-col ">
+        <div className="flex justify-around flex-row">
           <NavLink to="/login">
             <button>Login</button>
           </NavLink>
