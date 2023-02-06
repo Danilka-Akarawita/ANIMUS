@@ -6,7 +6,7 @@ export default function Home() {
     <div className="">
     <div className= " flex flex-row  space-y-10 flex justify-center  " >
     <img src={Logo} alt="logo"/>
-    <h className= "text-center"> ADMIN LOGIN</h>
+    <h1 className= "text-white"> ADMIN LOGIN</h1>
     <div >
    
     </div>
