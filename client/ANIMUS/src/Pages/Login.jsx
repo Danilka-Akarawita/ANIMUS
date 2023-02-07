@@ -18,8 +18,8 @@ export default function SignUp() {
     setFormData({ ...formData, [name]: value });
   };
   const handleSignIn = async () => {
-    const UID = await signInUser(formData.email, formData.password);
-    setName();
+    const user = await signInUser(formData.email, formData.password);
+    setName(user.name);
   };
   return (
     <div className="p-8 flex flex-col justify-around">
@@ -27,7 +27,7 @@ export default function SignUp() {
         <NavLink to="/">
           <img src={Title} alt="title" />
         </NavLink>
-        <h1>{name}</h1>
+        <h1>Hello, {name}</h1>
         <input
           type="text"
           placeholder="email"
