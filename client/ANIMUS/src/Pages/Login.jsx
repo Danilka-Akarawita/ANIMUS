@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
 import { useState } from "react";
 import { signInUser } from "../../firebase/autenticate";
+import { getUserFromUID } from "../controller/accountController";
 import Title from "../assets/ANIMUS.svg";
 import "./Login.css";
 import NavBar from "../components/NavBar";
@@ -12,12 +12,14 @@ export default function SignUp() {
     email: "",
     password: "",
   });
+  const [name, setName] = useState("");
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  const handleSignIn = () => {
-    signInUser(formData.email, formData.password);
+  const handleSignIn = async () => {
+    const UID = await signInUser(formData.email, formData.password);
+    setName();
   };
   return (
     <div className="p-8 flex flex-col justify-around">
@@ -25,7 +27,7 @@ export default function SignUp() {
         <NavLink to="/">
           <img src={Title} alt="title" />
         </NavLink>
-
+        <h1>{name}</h1>
         <input
           type="text"
           placeholder="email"

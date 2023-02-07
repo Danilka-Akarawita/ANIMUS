@@ -7,25 +7,26 @@ const getAccounts = async (req, res) => {
 };
 //get one account
 const getAccount = async (req, res) => {
-  const { id } = req.params;
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({ error: "No such account" });
-  }
-
-  const account = await Account.findById(id);
+  const { uid } = req.params;
+  console.log(uid);
+  const account = await Account.findOne({
+    UID: uid,
+  });
+  console.log(account);
   if (!account) {
     return res.status(404).json({ error: "Account not found" });
   }
-  res.status(200).json(account);
+  return res.status(200).json(account);
 };
 //create a new account
 const createNewAccount = async (req, res) => {
-  const { name, score, mobile } = req.body;
+  const { name, score, mobile, UID } = req.body;
   try {
     const account = await Account.create({
       name,
       score,
       mobile,
+      UID,
     });
     res.status(200).json(account);
   } catch (e) {
