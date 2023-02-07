@@ -7,14 +7,23 @@ import {
   GoogleAuthProvider,
   signOut,
 } from "firebase/auth";
+import {
+  getUserFromUID,
+  createUserFromUID,
+} from "../src/controller/accountController";
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-export const signUpUser = async (email, password) => {
+export const signUpUser = async (email, password, name, mobile) => {
   try {
-    const user = await createUserWithEmailAndPassword(auth, email, password);
-    console.log(user);
+    const userCredentials = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    console.log(userCredentials);
+    createUserFromUID(name, mobile, userCredentials.user.uid);
   } catch (error) {
     console.log(error.message);
   }
@@ -28,8 +37,12 @@ export const signInUser = async (email, password) => {
       password
     );
     console.log(userCredentials.user.uid);
+
+    getUserFromUID(userCredentials.user.uid);
+
+    return userCredentials.user.uid;
   } catch (error) {
-    console.log(error.message);
+    console.log(error);
   }
 };
 

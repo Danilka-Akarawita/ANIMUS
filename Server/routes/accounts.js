@@ -10,7 +10,7 @@ const router = express.Router();
 router.get("/", getAccounts);
 
 //get one account
-router.get("/:id", getAccount);
+router.get("/:uid", getAccount);
 
 //post new account
 router.post("/", createNewAccount);
