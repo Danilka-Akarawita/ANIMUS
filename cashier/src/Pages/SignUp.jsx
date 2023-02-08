@@ -5,7 +5,7 @@ import { signUpCashier,googleSignIn } from '../../firebase/authentication';
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
-    username: "",
+  
     firstName:"",
     lastName:"",
     email: "",
@@ -21,7 +21,7 @@ export default function SignUp() {
     signUpCashier(
       formData.email,
       formData.password,
-      formData.name,
+      formData.firstName,
       formData.cashierId
     );
   };
@@ -42,14 +42,14 @@ export default function SignUp() {
             <input type="text"
              placeholder="First name"
               className="p-2 "
-          name="firstname"
+          name="firstName"
           value={formData.firstName}
           onChange={handleFormChange}
           />
           <input type="text" 
           placeholder="Surname"
            className="p-2 "
-          name="surname"
+          name="lastName"
           value={formData.lastName}
           onChange={handleFormChange}
           />
@@ -64,14 +64,14 @@ export default function SignUp() {
           <input type="text" 
           placeholder='Username / email address' 
           className="p-2  " 
-          name='username/email'
-          value={formData.username}
+          name='email'
+          value={formData.email}
           onChange={handleFormChange}
           />
           <input type="text"
            placeholder='New password' 
            className="p-2  "
-            name='newPassword'
+            name='password'
             value={formData.password}
           onChange={handleFormChange}
             />

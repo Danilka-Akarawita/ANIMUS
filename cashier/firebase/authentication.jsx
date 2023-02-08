@@ -59,7 +59,7 @@ export const signOutCashier = async (email, password) => {
 export const googleSignIn = async () => {
   try {
     const user = await signInWithPopup(auth, provider);
-    console.log("loggedin")
+    console.log(user)
   } catch (error) {
     console.log(error.message);
   }
