@@ -10,6 +10,7 @@ export default function SignUp() {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
+    mobile: "",
     password: "",
     confirmPassword: "",
   });
@@ -18,7 +19,12 @@ export default function SignUp() {
     setFormData({ ...formData, [name]: value });
   };
   const handleSignUp = () => {
-    signUpUser(formData.email, formData.password);
+    signUpUser(
+      formData.email,
+      formData.password,
+      formData.username,
+      formData.mobile
+    );
   };
 
   const handleGoogleSignIn = () => {
@@ -30,7 +36,6 @@ export default function SignUp() {
         <NavLink to="/">
           <img src={Title} alt="title" />
         </NavLink>
-
         <input
           type="text"
           placeholder="username"
@@ -38,8 +43,15 @@ export default function SignUp() {
           name="username"
           value={formData.username}
           onChange={handleFormChange}
+        />{" "}
+        <input
+          type="text"
+          placeholder="mobile number"
+          className="p-2 my-4"
+          name="mobile"
+          value={formData.mobile}
+          onChange={handleFormChange}
         />
-
         <input
           type="text"
           placeholder="email"
