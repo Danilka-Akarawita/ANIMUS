@@ -21,6 +21,7 @@ export const signUpUser = async (email, password, name, cashierId) => {
       auth,
       email,
       password,
+      name,
       cashierId
     );
     console.log(userCredentials);
@@ -59,6 +60,8 @@ export const signOutUser = async (email, password) => {
 export const googleSignIn = async () => {
   try {
     const user = await signInWithPopup(auth, provider);
+    console.log(user)
+    
   } catch (error) {
     console.log(error.message);
   }

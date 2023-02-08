@@ -1,5 +1,7 @@
 import React from 'react'
-import  Logo from "../assets/main-logo.svg";
+ import  Logo from "../assets/main-logo.svg";
+import { useState } from 'react';
+import { signUpCashier,googleSignIn } from '../../firebase/authentication';
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
@@ -9,14 +11,14 @@ export default function SignUp() {
     email: "",
     cashierId: "",
     password: "",
-    confirmPassword: "",
+   
   });
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
   const handleSignUp = () => {
-    signUpUser(
+    signUpCashier(
       formData.email,
       formData.password,
       formData.name,
@@ -78,5 +80,5 @@ export default function SignUp() {
         </div>
       
     </div>
-  )
+  );
 }

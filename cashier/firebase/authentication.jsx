@@ -7,15 +7,15 @@ import {
   GoogleAuthProvider,
   signOut,
 } from "firebase/auth";
-import {
-  getUserFromUID,
-  createUserFromUID,
-} from "../src/controller/accountController";
+// import {
+//   getUserFromUID,
+//   createUserFromUID,
+// } from "../src/controller/accountController";
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-export const signUpUser = async (email, password, name, mobile,cashierId) => {
+export const signUpCashier = async (email, password, name, mobile,cashierId) => {
   try {
     const userCredentials = await createUserWithEmailAndPassword(
       auth,
@@ -24,13 +24,13 @@ export const signUpUser = async (email, password, name, mobile,cashierId) => {
       cashierId
     );
     console.log(userCredentials);
-    createUserFromUID(name, mobile, userCredentials.user.uid);
+    //createUserFromUID(name, mobile, userCredentials.user.uid);
   } catch (error) {
     console.log(error.message);
   }
 };
 
-export const signInUser = async (email, password,cashierId) => {
+export const signInCashier = async (email, password,cashierId) => {
   try {
     const userCredentials = await signInWithEmailAndPassword(
       auth,
@@ -40,7 +40,7 @@ export const signInUser = async (email, password,cashierId) => {
     );
     console.log(userCredentials.user.uid);
 
-    getUserFromUID(userCredentials.user.uid);
+   // getUserFromUID(userCredentials.user.uid);
 
     return userCredentials.user.uid;
   } catch (error) {
@@ -48,7 +48,7 @@ export const signInUser = async (email, password,cashierId) => {
   }
 };
 
-export const signOutUser = async (email, password) => {
+export const signOutCashier = async (email, password) => {
   try {
     await signOut(auth);
   } catch (error) {
@@ -59,6 +59,7 @@ export const signOutUser = async (email, password) => {
 export const googleSignIn = async () => {
   try {
     const user = await signInWithPopup(auth, provider);
+    console.log("loggedin")
   } catch (error) {
     console.log(error.message);
   }
