@@ -2,17 +2,13 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-const accountRoutes = require("./routes/accounts");
+const cashierAccountRoutes = require("./routes/cashierRoutes");
 const cors = require("cors");
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use((req, res, next) => {
-  console.log(req.path, req.method);
-  next();
-});
 //connect to animus server
 mongoose.set("strictQuery", false);
 mongoose
@@ -27,4 +23,4 @@ mongoose
     console.log(err);
   });
 
-app.use("/api/accounts",accountRoutes);
+app.use("/api/cashierAccounts", cashierAccountRoutes);
