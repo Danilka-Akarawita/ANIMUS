@@ -8,6 +8,10 @@ const accountSchema = new Schema(
       type: String,
       required: true,
     },
+    currency: {
+      type: Number,
+      default: 0,
+    },
     score: {
       type: Number,
       default: 0,

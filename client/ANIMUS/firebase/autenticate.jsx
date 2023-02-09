@@ -41,9 +41,9 @@ export const signInUser = async (email, password,cashierId) => {
     );
     console.log(userCredentials.user.uid);
 
-   // getUserFromUID(userCredentials.user.uid);
+    const user = getUserFromUID(userCredentials.user.uid);
 
-    return userCredentials.user.uid;
+    return user;
   } catch (error) {
     console.log(error);
   }
