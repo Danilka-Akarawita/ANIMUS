@@ -25,13 +25,13 @@ export const signUpUser = async (email, password, name, cashierId) => {
       cashierId
     );
     console.log(userCredentials);
-    //createUserFromUID(name, cashierId, userCredentials.user.uid);
+    createUserFromUID(name, cashierId, userCredentials.user.uid);
   } catch (error) {
     console.log(error.message);
   }
 };
 
-export const signInUser = async (email, password,cashierId) => {
+export const signInUser = async (email, password, cashierId) => {
   try {
     const userCredentials = await signInWithEmailAndPassword(
       auth,
@@ -60,8 +60,7 @@ export const signOutUser = async (email, password) => {
 export const googleSignIn = async () => {
   try {
     const user = await signInWithPopup(auth, provider);
-    console.log(user)
-    
+    console.log(user);
   } catch (error) {
     console.log(error.message);
   }
