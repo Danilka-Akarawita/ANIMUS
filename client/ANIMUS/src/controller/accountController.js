@@ -14,7 +14,7 @@ export const createUserFromUID = async (name, mobile, uid) => {
   const data = { name, mobile, UID: uid };
   console.log(data);
   const response = await fetch(
-    `https://animus-production.up.railway.app/api/accounts/${uid}`,
+    `https://animus-production.up.railway.app/api/accounts/`,
     {
       method: "POST",
       body: JSON.stringify(data),
