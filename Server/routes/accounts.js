@@ -15,7 +15,7 @@ router.get("/:uid", getAccount);
 //post new account
 router.post("/", createNewAccount);
 
-router.delete("/:id", (req, res) => {
+router.delete("/:uid", (req, res) => {
   res.json({ mssg: "delete account" });
 });
 
