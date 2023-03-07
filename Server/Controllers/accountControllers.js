@@ -36,7 +36,15 @@ const createNewAccount = async (req, res) => {
 //delete one account
 
 //update one account
+const updateAccount = async (req, res) => {
+  const { uid } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ error: "No account found" });
+  }
 
+  const account = await Account.findOneAndUpdate({ UID: uid }, { ...req.body });
+  if (!account) return res.status(400).json({ error: "No account found" });
+};
 //exports
 module.exports = {
   getAccount,

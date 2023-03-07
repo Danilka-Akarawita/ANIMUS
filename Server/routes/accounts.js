@@ -3,6 +3,7 @@ const {
   createNewAccount,
   getAccount,
   getAccounts,
+  updateAccount,
 } = require("../Controllers/accountControllers");
 const router = express.Router();
 
@@ -19,7 +20,5 @@ router.delete("/:uid", (req, res) => {
   res.json({ mssg: "delete account" });
 });
 
-router.patch("/:id", (req, res) => {
-  res.json({ mssg: "update account" });
-});
+router.patch("/:uid", updateAccount);
 module.exports = router;
