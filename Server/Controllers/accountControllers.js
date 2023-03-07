@@ -50,4 +50,5 @@ module.exports = {
   getAccount,
   getAccounts,
   createNewAccount,
+  updateAccount,
 };
