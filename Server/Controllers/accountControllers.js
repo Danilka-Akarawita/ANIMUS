@@ -41,7 +41,13 @@ const updateAccount = async (req, res) => {
   console.log("loading account");
   console.log({ ...req.body });
   console.log({ UID: uid });
-  const account = await Account.findOneAndUpdate({ UID: uid }, { ...req.body });
+  const account = await Account.findOneAndUpdate(
+    { UID: uid },
+    { ...req.body },
+    {
+      returnOriginal: false,
+    }
+  );
   if (!account) return res.status(400).json({ error: "No account found" });
 };
 //exports
