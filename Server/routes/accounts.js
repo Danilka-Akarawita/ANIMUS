@@ -20,5 +20,5 @@ router.delete("/:uid", (req, res) => {
   res.json({ mssg: "delete account" });
 });
 
-router.patch("/:uid", updateAccount);
+router.put("/:uid", updateAccount);
 module.exports = router;
