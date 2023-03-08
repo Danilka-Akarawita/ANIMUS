@@ -38,8 +38,9 @@ const createNewAccount = async (req, res) => {
 //update one account
 const updateAccount = async (req, res) => {
   const { uid } = req.params;
-  console.log("loading account");
-  if (uid.lenght == 10) {
+
+  console.log(uid.lenght());
+  if (uid.lenght() == 10) {
     const mobile = uid;
     console.log(mobile);
     const account = await Account.findOneAndUpdate(
