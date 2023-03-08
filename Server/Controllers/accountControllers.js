@@ -50,7 +50,7 @@ const updateAccount = async (req, res) => {
       returnOriginal: false,
     }
   );
-  if (!account)
+  if (!account) {
     account = await Account.findOneAndUpdate(
       { mobile: uid },
       { ...req.body },
@@ -58,6 +58,7 @@ const updateAccount = async (req, res) => {
         returnOriginal: false,
       }
     );
+  }
   console.log(account);
   if (!account) return res.status(400).json({ error: "No account found" });
   res.status(200).json(account);
