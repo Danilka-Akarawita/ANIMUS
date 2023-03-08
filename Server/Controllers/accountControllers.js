@@ -52,6 +52,7 @@ const updateAccount = async (req, res) => {
     );
     console.log(account);
     if (!account) return res.status(400).json({ error: "No account found" });
+    res.status(200).json(account);
   } else {
     console.log({ ...req.body });
     console.log({ UID: uid });
@@ -64,8 +65,8 @@ const updateAccount = async (req, res) => {
     );
     console.log(account);
     if (!account) return res.status(400).json({ error: "No account found" });
+    res.status(200).json(account);
   }
-  res.status(200).json(account);
 };
 //exports
 module.exports = {
