@@ -48,6 +48,7 @@ const updateAccount = async (req, res) => {
       returnOriginal: false,
     }
   );
+  console.log(account);
   if (!account) return res.status(400).json({ error: "No account found" });
 };
 //exports
