@@ -38,7 +38,8 @@ const createNewAccount = async (req, res) => {
 //update one account
 const updateAccount = async (req, res) => {
   const { uid } = req.params;
-
+  console.log("loading account");
+  console.log(req.body);
   const account = await Account.findOneAndUpdate({ UID: uid }, { ...req.body });
   if (!account) return res.status(400).json({ error: "No account found" });
 };
