@@ -39,17 +39,31 @@ const createNewAccount = async (req, res) => {
 const updateAccount = async (req, res) => {
   const { uid } = req.params;
   console.log("loading account");
-  console.log({ ...req.body });
-  console.log({ UID: uid });
-  const account = await Account.findOneAndUpdate(
-    { UID: uid },
-    { ...req.body },
-    {
-      returnOriginal: false,
-    }
-  );
-  console.log(account);
-  if (!account) return res.status(400).json({ error: "No account found" });
+  if (uid.lenght == 10) {
+    const mobile = uid;
+    console.log(mobile);
+    const account = await Account.findOneAndUpdate(
+      { mobile: mobile },
+      { ...req.body },
+      {
+        returnOriginal: false,
+      }
+    );
+    console.log(account);
+    if (!account) return res.status(400).json({ error: "No account found" });
+  } else {
+    console.log({ ...req.body });
+    console.log({ UID: uid });
+    const account = await Account.findOneAndUpdate(
+      { UID: uid },
+      { ...req.body },
+      {
+        returnOriginal: false,
+      }
+    );
+    console.log(account);
+    if (!account) return res.status(400).json({ error: "No account found" });
+  }
   res.status(200).json(account);
 };
 //exports
