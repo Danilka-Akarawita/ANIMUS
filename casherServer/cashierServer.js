@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
-const cashierAccountRoutes = require("./routes/cashierRoutes");
+const cashierAccountRoutes = require("./routes/cashierRoutes.js");
 const cors = require("cors");
 
 const app = express();
